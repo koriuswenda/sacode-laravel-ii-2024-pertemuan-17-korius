@@ -24,6 +24,7 @@ class Mobil
         echo 'Warna : ' . $this->warna . '<br> ';
         echo 'Pemilik : ' . $nama . '<br>';
         echo 'Keterangan  : ' . $ket . '<br>';
+        echo '<br>';
     }
 
     public function stop()
@@ -32,9 +33,23 @@ class Mobil
     }
 }
 
+class Kedaraan extends Mobil
+{
+
+    public $jenis;
+
+    public function bergerak()
+    {
+        echo 'kendaraan sedang bergerak';
+    }
+}
+
+
+
 //Opject
 
 $mobil = new Mobil();
+$kendaraan = new Kedaraan();
 $mobil->merek = 'Avansa';
 $mobil->model = 'Inova';
 $mobil->tahun = '2023';
@@ -48,5 +63,8 @@ Lorem ipsum, atau ringkasnya lipsum, adalah teks standar yang ditempatkan untuk 
 // Panggil Metode
 
 $mobil->cek('korius', $ket);
+$kendaraan->merek = 'BWM';
+echo $kendaraan->merek;
+$kendaraan->cek('kussa', '');
 
 // $mobil->stop();
